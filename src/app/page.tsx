@@ -49,8 +49,6 @@ const Home: NextPage = () => {
     };
   }, []);
 
-  console.log(windowWidth);
-
 
   return (
     // Container
