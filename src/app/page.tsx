@@ -13,11 +13,44 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { dummyCatalog, dummyCategory, dummyItem } from "@/app/dummies/dummy";
-import ImageFormalSuit from "../../public/images/categories/ImageCategoryFormalSuit.png";
 
 const Home: NextPage = () => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [responsiveCatalogPreview, setResponsiveCatalogPreview] = useState(4);
+  const [responsiveCatalogSpace, setResponsiveCatalogSpace] = useState(50);
+
   useEffect(() => {
+    function handleResize() {
+      setWindowWidth(window.innerWidth);
+      if (window.innerWidth >= 1280) {
+        setResponsiveCatalogPreview(4);
+      } else if (window.innerWidth >= 1024) {
+        setResponsiveCatalogPreview(3);
+        setResponsiveCatalogSpace(50);
+      } else if (window.innerWidth >= 963) {
+        setResponsiveCatalogPreview(3);
+        setResponsiveCatalogSpace(50);
+      } else if (window.innerWidth >= 616) {
+        setResponsiveCatalogPreview(3);
+        setResponsiveCatalogSpace(50);
+      } else if (window.innerWidth >= 337) {
+        setResponsiveCatalogPreview(2);
+        setResponsiveCatalogSpace(50);
+      } else {
+        setResponsiveCatalogPreview(1);
+        setResponsiveCatalogSpace(50);
+      }
+    }
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
+
+  console.log(windowWidth);
+
 
   return (
     // Container
@@ -66,8 +99,8 @@ const Home: NextPage = () => {
         <Swiper
           // install Swiper modules
           modules={[Navigation, Pagination, Scrollbar, A11y]}
-          spaceBetween={50}
-          slidesPerView={4}
+          spaceBetween={responsiveCatalogSpace}
+          slidesPerView={responsiveCatalogPreview}
           navigation
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
