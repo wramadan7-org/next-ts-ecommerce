@@ -6,6 +6,21 @@ import ImageCatalogChillOutfit from "../../../public/images/catalogs/ImageCatalo
 import ImageCatalogFamilyOutfit from "../../../public/images/catalogs/ImageCatalogFamilyOutfit.jpg";
 import ImageCatalogBestSaleOutfit from "../../../public/images/catalogs/ImageCatalogBestSaleOutfit.jpg";
 import ImageCategoryTshirt from "../../../public/images/categories/ImageCategoryTshirt.png";
+import ImageCategoryShort from "../../../public/images/categories/ImageCategoryShort.png";
+import ImageCategoryJacket from "../../../public/images/categories/ImageCategoryJacket.png";
+import ImageCategoryPant from "../../../public/images/categories/ImageCategoryPant.png";
+import ImageCategoryShoes from "../../../public/images/categories/ImageCategoryShoes.png";
+import ImageCategoryHighHeel from "../../../public/images/categories/ImageCategoryHighHeel.png";
+import ImageCategoryWristWatch from "../../../public/images/categories/ImageCategoryWristWatch.png";
+import ImageCategoryHandBag from "../../../public/images/categories/ImageCategoryHandBag.png";
+import ImageCategoryBagBack from "../../../public/images/categories/ImageCategoryBagBack.png";
+import ImageCategorySocks from "../../../public/images/categories/ImageCategorySocks.png";
+import ImageCategoryGlasses from "../../../public/images/categories/ImageCategoryGlasses.png";
+import ImageCategoryCap from "../../../public/images/categories/ImageCategoryCap.png";
+import ImageCategoryTie from "../../../public/images/categories/ImageCategoryTie.png";
+import ImageCategoryDress from "../../../public/images/categories/ImageCategoryDress.png";
+import ImageCategoryFormalSuit from "../../../public/images/categories/ImageCategoryFormalSuit.png";
+import ImageCategoryAccessories from "../../../public/images/categories/ImageCategoryAccessories.png";
 
 export const dummyCategory = [
   {
@@ -16,77 +31,77 @@ export const dummyCategory = [
   {
     id: 2,
     category: "Shorts",
-    image: ""
+    image: ImageCategoryShort
   },
   {
     id: 3,
     category: "Jacket",
-    image: ""
+    image: ImageCategoryJacket
   },
   {
     id: 4,
     category: "Pants",
-    image: ""
+    image: ImageCategoryPant
   },
   {
     id: 5,
     category: "Shoes",
-    image: ""
+    image: ImageCategoryShoes
   },
   {
     id: 6,
     category: "High heels",
-    image: ""
+    image: ImageCategoryHighHeel
   },
   {
     id: 7,
     category: "Wristwatch",
-    image: ""
+    image: ImageCategoryWristWatch
   },
   {
     id: 8,
     category: "Handbag",
-    image: ""
+    image: ImageCategoryHandBag
   },
   {
     id: 9,
     category: "Bagback",
-    image: ""
+    image: ImageCategoryBagBack
   },
   {
     id: 10,
     category: "Socks",
-    image: ""
+    image: ImageCategorySocks
   },
   {
     id: 11,
     category: "Glasses",
-    image: ""
+    image: ImageCategoryGlasses
   },
   {
     id: 12,
     category: "Cap",
-    image: ""
+    image: ImageCategoryCap
   },
   {
     id: 13,
     category: "Tie",
-    image: ""
+    image: ImageCategoryTie
   },
   {
     id: 14,
     category: "Dress",
-    image: ""
+    image: ImageCategoryDress
   },
   {
     id: 15,
     category: "Formal suit",
-    image: ""
+    image: ImageCategoryFormalSuit
   },
   {
     id: 16,
     category: "Accessories",
-    image: ""
+    image: ImageCategoryAccessories
   },
 ];
 
@@ -125,5 +140,113 @@ export const dummyCatalog = [
     id: 7,
     catalog: "Best Sale",
     image: ImageCatalogBestSaleOutfit
+  },
+];
+
+export const dummyItem = [
+  {
+    title: "Men's formal suit - Black & White",
+    price: 40.0,
+    brand: "Zalora Cloth",
+    rating: 10,
+    image: ImageCategoryFormalSuit
+  },
+  {
+    title: "Men's formal suit - Black & White",
+    price: 40.0,
+    brand: "Zalora Cloth",
+    rating: 10,
+    image: ImageCategoryFormalSuit
+  },
+  {
+    title: "Men's formal suit - Black & White",
+    price: 40.0,
+    brand: "Zalora Cloth",
+    rating: 10,
+    image: ImageCategoryFormalSuit
+  },
+  {
+    title: "Men's formal suit - Black & White",
+    price: 40.0,
+    brand: "Zalora Cloth",
+    rating: 10,
+    image: ImageCategoryFormalSuit
+  },
+  {
+    title: "Men's formal suit - Black & White",
+    price: 40.0,
+    brand: "Zalora Cloth",
+    rating: 10,
+    image: ImageCategoryFormalSuit
+  },
+  {
+    title: "Men's formal suit - Black & White",
+    price: 40.0,
+    brand: "Zalora Cloth",
+    rating: 10,
+    image: ImageCategoryFormalSuit
+  },
+  {
+    title: "Men's formal suit - Black & White",
+    price: 40.0,
+    brand: "Zalora Cloth",
+    rating: 10,
+    image: ImageCategoryFormalSuit
+  },
+  {
+    title: "Men's formal suit - Black & White",
+    price: 40.0,
+    brand: "Zalora Cloth",
+    rating: 10,
+    image: ImageCategoryFormalSuit
+  },
+  {
+    title: "Men's formal suit - Black & White",
+    price: 40.0,
+    brand: "Zalora Cloth",
+    rating: 10,
+    image: ImageCategoryFormalSuit
+  },
+  {
+    title: "Men's formal suit - Black & White",
+    price: 40.0,
+    brand: "Zalora Cloth",
+    rating: 10,
+    image: ImageCategoryFormalSuit
+  },
+  {
+    title: "Men's formal suit - Black & White",
+    price: 40.0,
+    brand: "Zalora Cloth",
+    rating: 10,
+    image: ImageCategoryFormalSuit
+  },
+  {
+    title: "Men's formal suit - Black & White",
+    price: 40.0,
+    brand: "Zalora Cloth",
+    rating: 10,
+    image: ImageCategoryFormalSuit
+  },
+  {
+    title: "Men's formal suit - Black & White",
+    price: 40.0,
+    brand: "Zalora Cloth",
+    rating: 10,
+    image: ImageCategoryFormalSuit
+  },
+  {
+    title: "Men's formal suit - Black & White",
+    price: 40.0,
+    brand: "Zalora Cloth",
+    rating: 10,
+    image: ImageCategoryFormalSuit
+  },
+  {
+    title: "Men's formal suit - Black & White",
+    price: 40.0,
+    brand: "Zalora Cloth",
+    rating: 10,
+    image: ImageCategoryFormalSuit
   },
 ];
