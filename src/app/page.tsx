@@ -1,12 +1,25 @@
+"use client";
 import Image from "next/image";
 import ImageLogo from "../../public/imagelogo.png";
 import { BiFilterAlt } from "react-icons/bi";
 import { SlBasket } from "react-icons/sl";
 import { NextPage } from "next";
+import { useEffect } from "react";
 import ImageJacketBlack from "../../public/ImageJacketBlack.png";
 import ImageJacketWhite from "../../public/ImageJacketWhite.png";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper.min.css";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import {dummyCatalog} from "@/app/dummies/dummy";
 
 const Home: NextPage = () => {
+  useEffect(() => {
+  }, []);
+
   return (
     // Container
     <div className="bg-white w-full h-screen text-black">
@@ -50,22 +63,27 @@ const Home: NextPage = () => {
 
       {/* Content */}
       <section className="max-w-7xl mx-auto px-2">
-        <div className="h-52 w-full border text-center font-bold text-3xl flex flex-row items-center overflow-scroll">
-          <div className="border rounded-md items-center flex justify-center w-[456px] h-[180px] overflow-hidden bg-blue-400">
-            <Image src={ImageJacketBlack} width={170} height={170} alt="" />
-          </div>
-
-          <div className="border rounded-md items-center flex justify-center w-[456px] h-[180px] overflow-hidden bg-blue-400">
-            <Image src={ImageJacketWhite} width={170} height={170} alt="" />
-          </div>
-          <div className="border rounded-md items-center flex justify-center w-[456px] h-[180px] overflow-hidden bg-blue-400">
-            <Image src={ImageJacketBlack} width={170} height={170} alt="" />
-          </div>
-
-          <div className="border rounded-md items-center flex justify-center w-[456px] h-[180px] overflow-hidden bg-blue-400">
-            <Image src={ImageJacketWhite} width={170} height={170} alt="" />
-          </div>
-        </div>
+        <Swiper
+          // install Swiper modules
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          spaceBetween={50}
+          slidesPerView={4}
+          navigation
+          pagination={{ clickable: true }}
+          scrollbar={{ draggable: true }}
+          onSwiper={(swiper) => console.log(swiper)}
+          onSlideChange={() => console.log("slide change")}
+          className="gap-x-3"
+        >
+          {dummyCatalog.map((value, index) => (
+            <SwiperSlide key={index}>
+            <button type="button" className="relative rounded-md items-center flex-grow-0 flex-shrink-0 flex justify-center w-[320px] h-[180px] overflow-hidden bg-gray-400 swipper-slide">
+              <Image src={value.image} priority className="object-cover" alt="" />
+              <span className="absolute mx-auto font-bold text-4xl text-white">{value.catalog}</span>
+            </button>
+          </SwiperSlide>
+          ))}
+        </Swiper>
       </section>
     </div>
   );
