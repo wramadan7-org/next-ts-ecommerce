@@ -13,6 +13,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { dummyCatalog, dummyCategory, dummyItem } from "@/app/dummies/dummy";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -82,9 +83,9 @@ const Home: NextPage = () => {
 
               {/* Button */}
               <div className="flex items-center gap-x-4">
-                <button type="button" className="text-white text-sm font-medium text-center bg-[#DB3022] rounded-full h-9 w-24 focus:outline-[#DB3022] hover:bg-[#C72C1E]">Login</button>
+                <Link href={"/pages/auth/login"} type="button" className="flex items-center justify-center text-white text-sm font-medium text-center bg-[#DB3022] rounded-full h-9 w-24 focus:outline-[#DB3022] hover:bg-[#C72C1E]">Login</Link>
 
-                <button type="button" className="text-[#9B9B9B] text-sm font-medium text-center bg-transparent border rounded-full h-9 w-24 focus:outline-[#DB3022] hover:bg-[#C72C1E] hover:text-white hover:border-none">Signup</button>
+                <Link href={"/pages/auth/register"} type="button" className="flex items-center justify-center text-[#9B9B9B] text-sm font-medium text-center bg-transparent border rounded-full h-9 w-24 focus:outline-[#DB3022] hover:bg-[#C72C1E] hover:text-white hover:border-none">Signup</Link>
               </div>
             </div>
           </nav>
