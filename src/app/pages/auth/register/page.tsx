@@ -4,8 +4,10 @@ import ImageLogo from "@/../public/ImageLogo.png";
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Register: NextPage = () => {
+  const router = useRouter();
   const [activeRole, setActiveRole] = useState("customer");
   const [form, setForm] = useState({
     name: "",
@@ -45,6 +47,7 @@ const Register: NextPage = () => {
       return;
     }
 
+    router.push("/");
     console.table(data);
   };
 
