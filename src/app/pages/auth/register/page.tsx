@@ -5,10 +5,13 @@ import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
 
-const Login: NextPage = () => {
+const Register: NextPage = () => {
   const [activeRole, setActiveRole] = useState("customer");
   const [form, setForm] = useState({
+    name: "",
     email: "",
+    phoneNumber: "",
+    storeName: "",
     password: "",
   });
 
@@ -19,7 +22,30 @@ const Login: NextPage = () => {
   const handleSubmit = (event: any) => {
     event.preventDefault();
 
-    console.table(form);
+    let data: any;
+
+    if (activeRole === "customer") {
+      data = {
+        name: form.name,
+        email: form.email,
+        password: form.password,
+        role: activeRole,
+      };
+    } else if (activeRole === "seller") {
+      data = {
+        name: form.name,
+        email: form.email,
+        phoneNumber: form.phoneNumber,
+        storeName: form.storeName,
+        password: form.password,
+        role: activeRole,
+      };
+    } else {
+      alert("Role is not valid!");
+      return;
+    }
+
+    console.table(data);
   };
 
   return (
@@ -43,18 +69,26 @@ const Login: NextPage = () => {
           </div>
 
           <form onSubmit={handleSubmit} className="flex flex-col gap-y-5">
+            <input type="text" name="name" onChange={(event) => handleChangeForm(event)} className="border w-[400px] max-w-[400px] h-[48px] px-2 text-black font-medium text-sm outline-[#DB3022] rounded-md" placeholder="Name" />
+
             <input type="email" name="email" onChange={(event) => handleChangeForm(event)} className="border w-[400px] max-w-[400px] h-[48px] px-2 text-black font-medium text-sm outline-[#DB3022] rounded-md" placeholder="Email" />
+
+            {activeRole === "seller" && (
+              <div className="flex flex-col gap-y-5">
+                <input type="text" name="phoneNumber" onChange={(event) => handleChangeForm(event)} className="border w-[400px] max-w-[400px] h-[48px] px-2 text-black font-medium text-sm outline-[#DB3022] rounded-md" placeholder="Phone number" />
+
+                <input type="text" name="storeName" onChange={(event) => handleChangeForm(event)} className="border w-[400px] max-w-[400px] h-[48px] px-2 text-black font-medium text-sm outline-[#DB3022] rounded-md" placeholder="Store name" />
+              </div>
+            )}
 
             <input type="password" name="password" onChange={(event) => handleChangeForm(event)} className="border w-[400px] max-w-[400px] h-[48px] px-2 text-black font-medium text-sm outline-[#DB3022] rounded-md" placeholder="Password" />
 
-            <Link href={"/pages/auth/forgetPassword"} type="button" className="text-sm text-[#DB3022] font-normal outline-none hover:text-[#C72C1E] w-fit self-end">Forget password?</Link>
-
-            <button type="submit" className="bg-[#DB3022] text-center text-white text-sm font-medium h-[48px] rounded-full hover:bg-[#C72C1E]">LOGIN</button>
+            <button type="submit" className="bg-[#DB3022] text-center text-white text-sm font-medium h-[48px] rounded-full hover:bg-[#C72C1E]">Register</button>
           </form>
 
           <div className="flex flex-row items-center font-normal text-sm gap-x-2">
-            <span className="text-black">Don&apos;t have a account?</span>
-            <Link href={"/pages/auth/register"} type="button" className="text-[#DB3022]">Register</Link>
+            <span className="text-black">Already have account?</span>
+            <Link href={"/pages/auth/login"} type="button" className="text-[#DB3022]">Sign in</Link>
           </div>
         </div>
       </section>
@@ -62,4 +96,4 @@ const Login: NextPage = () => {
   );
 };
 
-export default Login;
+export default Register;
